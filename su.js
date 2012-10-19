@@ -1,5 +1,10 @@
-var push_cwd = "/D /Q /K pushd \"" + WScript.Arguments(0);
+var push_cwd = "-k pushd \"" + WScript.Arguments(0);
 
 var shell = new ActiveXObject("Shell.Application");
 
-shell.ShellExecute("cmd.exe", push_cwd, "", "runas");
+shell.ShellExecute(
+        "PyCmd.exe",
+        push_cwd,
+        "",
+        "runas"
+        );
