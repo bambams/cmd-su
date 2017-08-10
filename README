@@ -1,11 +1,27 @@
-This is basically a short WScript JScript script and a wrapper cmd script that together allow you to execute a program (or console) from the command prompt in Windows as an administrator. For those familiar with su and sudo in UNIX, this is like a compromise to get sort of the same functionality for Windows. I'm not a WScript user so I can't really tell you how it works exactly (it's ugly and evil). I got the idea from a script used to configure SQL Server Express and created one for my own uses.
+This is basically a short WScript JScript script and a wrapper cmd script that
+together allow you to execute a program (or console) from the command prompt in
+Windows as an administrator. For those familiar with su and sudo in UNIX, this
+is like a compromise to get sort of the same functionality for Windows. I'm not
+a WScript user so I can't really tell you how it works exactly (it's ugly and
+evil). I got the idea from a script used to configure SQL Server Express and
+created one for my own uses.
 
-For security purposes, it might be best to install it somewhere that requires administrative rights to write to so that a malicious user or software can't change what executes with admininistrative privileges when you run it. For example, C:\bin\ seems like a sensible place. Whether or not you want to add that to your PATH is up to you, but using an absolute path to execute it might be safest (so that malicious software doesn't change your PATH and again trick you into elevating a malicious program).
+For security purposes, it might be best to install it somewhere that requires
+administrative rights to write to so that a malicious user or software can't
+change what executes with admininistrative privileges when you run it. For
+example, C:\bin\ seems like a sensible place. Whether or not you want to add
+that to your PATH is up to you, but using an absolute path to execute it might
+be safest (so that malicious software doesn't change your PATH and again trick
+you into elevating a malicious program).
 
 In Windows 7 (at least) it will trigger the UAC prompt for elevated privileges.
 
-Warning: by default it uses relative paths to execute the command shell, which means that a malicious user or software could again change your PATH so that it execute a different program instead of the shell. Use with caution. :) It is recommended to replace the path to the command shell with an absolute path.
+Warning: by default it uses relative paths to execute the command shell, which
+means that a malicious user or software could again change your PATH so that it
+execute a different program instead of the shell. Use with caution. :) It is
+recommended to replace the path to the command shell with an absolute path.
 
-By default the current working directory is passed into it and is changed inside the new cmd.exe shell with pushd.
+By default the current working directory is passed into it and is changed
+inside the new cmd.exe shell with pushd.
 
 # vim: ft=text tw=0 wrap
